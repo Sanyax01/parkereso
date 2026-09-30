@@ -11,6 +11,10 @@
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
+
         <ListBox x:Name="lbox_meret" Margin="0,0,0,280"/>
+        <ListBox x:Name="lbox_tema" Margin="0,159,0,150"/>
+        <Grid x:Name="parkeresoGrid" Grid.Column="1"/>
+        <Button x:Name="btn_clickk" Content="start" HorizontalAlignment="Left" Margin="23,323,0,0" VerticalAlignment="Top" Height="73" Width="143" Click="btn_click"/>
     </Grid>
 </Window>
