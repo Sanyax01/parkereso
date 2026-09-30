@@ -24,13 +24,25 @@
                 <SolidColorBrush Color="White" Opacity="0.4"/>
             </ListBox.Background>
         </ListBox>
-        <ListBox x:Name="lbox_tema" Margin="0,159,0,150" FontSize="18">
+        <ListBox x:Name="lbox_tema" Margin="0,159,0,150" FontSize="18" Padding="0,10,0,10" BorderThickness="1,10,1,16">
+            <ListBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAD3AC8" Offset="0.015"/>
+                    <GradientStop Color="#FF3A29B1" Offset="1"/>
+                </LinearGradientBrush>
+            </ListBox.BorderBrush>
             <ListBox.Background>
                 <SolidColorBrush Color="White" Opacity="0.4"/>
             </ListBox.Background>
         </ListBox>
         <Grid x:Name="parkeresoGrid" Grid.Column="1"/>
-        <Button x:Name="btn_clickk" Content="start" HorizontalAlignment="Left" Margin="23,323,0,0" VerticalAlignment="Top" Height="73" Width="143" Click="btn_click" FontSize="40" FontFamily="Stencil">
+        <Button x:Name="btn_clickk" Content="start" HorizontalAlignment="Left" Margin="20,323,0,0" VerticalAlignment="Top" Height="73" Width="143" Click="btn_click" FontSize="40" FontFamily="Stencil" BorderThickness="10,0,10,0">
+            <Button.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" SpreadMethod="Pad" MappingMode="RelativeToBoundingBox">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFB700FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.BorderBrush>
             <Button.Background>
                 <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
             </Button.Background>
