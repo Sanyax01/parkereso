@@ -52,11 +52,13 @@ namespace parkereso
                         
                         Button btn = new Button
                         {
-                            Content = szamok[index++],
+                            Name = "btn_" + szamok[index++].ToString(),
+                            Content = "?",
                             FontSize = 20,
                             FontWeight = FontWeights.Bold,
                             Margin = new Thickness(3)
                         };
+                        btn.Click += button_click;
                         Grid.SetRow(btn, i);
                         Grid.SetColumn(btn, j);
 
@@ -89,11 +91,13 @@ namespace parkereso
 
                         Button btn = new Button
                         {
-                            Content = szamok[index++],
+                            Name = "btn_" + szamok[index++].ToString(),
+                            Content = "?",
                             FontSize = 20,
                             FontWeight = FontWeights.Bold,
                             Margin = new Thickness(3)
                         };
+                        btn.Click += button_click;
                         Grid.SetRow(btn, i);
                         Grid.SetColumn(btn, j);
 
@@ -146,10 +150,39 @@ namespace parkereso
             
 
         }
+        string elozo_btn = null; Button elozo = null; 
         private void button_click(object sender, RoutedEventArgs e)
         {
-            
+            Button btn = sender as Button;
+            if (btn != null)
+            {
+                btn.Content = btn.Name.Split('_')[1];
+                btn.Background = Brushes.Coral;
+            }
+            string felirat = btn.Content.ToString();
+            if (elozo_btn == null)
+            {
+                elozo_btn = felirat;
+                elozo = btn;
+                btn.Background = Brushes.Coral;
+            }
+            else if (elozo_btn == felirat)
+            {
+                MessageBox.Show("Találtál egy párt!");
+                elozo_btn = null;
+                btn.IsEnabled = false;
+                elozo.IsEnabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Nem találtál párt!");
 
+                elozo_btn = null;
+                btn.Background = Brushes.LightGray;
+                btn.Content = "?";
+                elozo.Background = Brushes.LightGray;
+                elozo.Content = "?";
+            }
         }
 
         private void btn_click(object sender, RoutedEventArgs e)
