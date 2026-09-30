@@ -7,14 +7,34 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="White"/>
+                <GradientStop Color="#FF33D2C0" Offset="1"/>
+                <GradientStop Color="#FF5EF5E4" Offset="0.83"/>
+            </LinearGradientBrush>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ListBox x:Name="lbox_meret" Margin="0,0,0,280"/>
-        <ListBox x:Name="lbox_tema" Margin="0,159,0,150"/>
+        <ListBox x:Name="lbox_meret" Margin="0,0,0,280" FontSize="18">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.4"/>
+            </ListBox.Background>
+        </ListBox>
+        <ListBox x:Name="lbox_tema" Margin="0,159,0,150" FontSize="18">
+            <ListBox.Background>
+                <SolidColorBrush Color="White" Opacity="0.4"/>
+            </ListBox.Background>
+        </ListBox>
         <Grid x:Name="parkeresoGrid" Grid.Column="1"/>
-        <Button x:Name="btn_clickk" Content="start" HorizontalAlignment="Left" Margin="23,323,0,0" VerticalAlignment="Top" Height="73" Width="143" Click="btn_click"/>
+        <Button x:Name="btn_clickk" Content="start" HorizontalAlignment="Left" Margin="23,323,0,0" VerticalAlignment="Top" Height="73" Width="143" Click="btn_click" FontSize="40" FontFamily="Stencil">
+            <Button.Background>
+                <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+            </Button.Background>
+        </Button>
+        <TextBlock x:Name="prob_box" HorizontalAlignment="Left" Margin="23,284,0,0" TextWrapping="Wrap" Text="" TextAlignment="Center" VerticalAlignment="Top" Height="34" Width="143" FontSize="16" FontWeight="Bold"/>
     </Grid>
 </Window>

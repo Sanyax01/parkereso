@@ -150,6 +150,7 @@ namespace parkereso
             
 
         }
+        int probalkozas = 0;
         string elozo_btn = null; Button elozo = null; 
         private void button_click(object sender, RoutedEventArgs e)
         {
@@ -172,6 +173,7 @@ namespace parkereso
                 elozo_btn = null;
                 btn.IsEnabled = false;
                 elozo.IsEnabled = false;
+                probalkozas++;
             }
             else
             {
@@ -182,7 +184,9 @@ namespace parkereso
                 btn.Content = "?";
                 elozo.Background = Brushes.LightGray;
                 elozo.Content = "?";
+                probalkozas++;
             }
+            prob_box.Text = probalkozas.ToString();
         }
 
         private void btn_click(object sender, RoutedEventArgs e)
