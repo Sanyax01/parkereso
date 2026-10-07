@@ -16,9 +16,10 @@ namespace parkereso
     /// </summary>
     public partial class MainWindow : Window
     {
+        int probalkozas = 0;
         List<string> meret = new List<string> {"2 x 2","4 x 4","6 x 6" };
         List<string> tema = new List<string> { "számok","emoji", "nevek", "szakáll" };
-        List<string> emoji = new List<string> { "😎", "🥷", "🪐", "🤣", "👆", "👇", "😍", "💕", "😆", "😭", "😡", "🤩", "🤑", "😱", "🤢", "👺", "💀", "💩"};
+        List<string> emoji = new List<string> { "😎", "🥷", "👾", "🤣", "👆", "👇", "😍", "💕", "😆", "😭", "😡", "🤩", "🤑", "😱", "🤢", "👺", "💀", "💩"};
         List<string> nevek = new List<string> { "Anna", "Emma", "Léna", "Lili", "Nóra", "Zita", "Mira", "Luca", "Zoé", "Áron", "Beni", "Dani", "Erik", "Levi", "Noel", "Máté", "Zsolt", "Márk"};
         List<string> szakáll = new List<string> { "Borosta" ,"Körszakáll", "Pajesz" ,"Kecske", "Bajusz", "Állszakáll", "Full beard", "Balbo" ,"Garibaldi", "Verdi", "Van Dyke" ,"Bandholz", "Anchor" ,"Chin puff", "Soul patch", "Goatee", "Stubble", "Ducktail" };
         public MainWindow()
@@ -30,7 +31,9 @@ namespace parkereso
 
         private void GombokElhejezese()
         {
-
+            probalkozas = 0;
+            prob_box.Text = probalkozas.ToString();
+            
             if (lbox_meret.SelectedItem == "2 x 2")
             {
                 int meret = 2;
@@ -241,7 +244,6 @@ namespace parkereso
             
 
         }
-        int probalkozas = 0;
         string elozo_btn = null; Button elozo = null; 
         private void button_click(object sender, RoutedEventArgs e)
         {

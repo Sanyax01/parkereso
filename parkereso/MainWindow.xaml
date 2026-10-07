@@ -19,20 +19,40 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ListBox x:Name="lbox_meret" Margin="0,0,0,280" FontSize="18">
-            <ListBox.Background>
-                <SolidColorBrush Color="White" Opacity="0.4"/>
-            </ListBox.Background>
-        </ListBox>
-        <ListBox x:Name="lbox_tema" Margin="0,159,0,150" FontSize="18" Padding="0,10,0,10" BorderThickness="1,10,1,16">
+        <ListBox x:Name="lbox_meret" Margin="0,0,0,280" FontSize="18" BorderThickness="1,10,1,10">
             <ListBox.BorderBrush>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFAD3AC8" Offset="0.015"/>
-                    <GradientStop Color="#FF3A29B1" Offset="1"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterX="0.5" CenterY="0.5"/>
+                            <RotateTransform CenterX="0.5" CenterY="0.5"/>
+                            <TranslateTransform X="2"/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FFE600F3"/>
+                    <GradientStop Color="#FF2C10BB" Offset="1"/>
+                    <GradientStop Color="#FF3A0EBF" Offset="0.923"/>
+                    <GradientStop Color="#FFBF0EB0" Offset="0.952"/>
+                    <GradientStop Color="#FF3D0DC0" Offset="0.048"/>
                 </LinearGradientBrush>
             </ListBox.BorderBrush>
             <ListBox.Background>
-                <SolidColorBrush Color="White" Opacity="0.4"/>
+                <SolidColorBrush Color="#FF290461" Opacity="0.4"/>
+            </ListBox.Background>
+        </ListBox>
+        <ListBox x:Name="lbox_tema" Margin="0,159,0,150" FontSize="14" Padding="0,10,0,10" BorderThickness="1,10,1,16">
+            <ListBox.BorderBrush>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFAD3AC8" Offset="0.015"/>
+                    <GradientStop Color="#FF3A29B1" Offset="0.052"/>
+                    <GradientStop Color="#FFB12999" Offset="0.967"/>
+                    <GradientStop Color="#FFB12999" Offset="0.978"/>
+                    <GradientStop Color="#FF4629B1" Offset="0.897"/>
+                </LinearGradientBrush>
+            </ListBox.BorderBrush>
+            <ListBox.Background>
+                <SolidColorBrush Color="#FF4629B1" Opacity="0.4"/>
             </ListBox.Background>
         </ListBox>
         <Grid x:Name="parkeresoGrid" Grid.Column="1"/>
