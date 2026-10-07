@@ -17,7 +17,10 @@ namespace parkereso
     public partial class MainWindow : Window
     {
         List<string> meret = new List<string> {"2 x 2","4 x 4","6 x 6" };
-        List<string> tema = new List<string> { "emoji", "nevek", "szakáll" };
+        List<string> tema = new List<string> { "számok","emoji", "nevek", "szakáll" };
+        List<string> emoji = new List<string> { "😎", "🥷", "🪐", "🤣", "👆", "👇", "😍", "💕", "😆", "😭", "😡", "🤩", "🤑", "😱", "🤢", "👺", "💀", "💩"};
+        List<string> nevek = new List<string> { "Anna", "Emma", "Léna", "Lili", "Nóra", "Zita", "Mira", "Luca", "Zoé", "Áron", "Beni", "Dani", "Erik", "Levi", "Noel", "Máté", "Zsolt", "Márk"};
+        List<string> szakáll = new List<string> { "Borosta" ,"Körszakáll", "Pajesz" ,"Kecske", "Bajusz", "Állszakáll", "Full beard", "Balbo" ,"Garibaldi", "Verdi", "Van Dyke" ,"Bandholz", "Anchor" ,"Chin puff", "Soul patch", "Goatee", "Stubble", "Ducktail" };
         public MainWindow()
         {
             InitializeComponent();
@@ -27,6 +30,7 @@ namespace parkereso
 
         private void GombokElhejezese()
         {
+
             if (lbox_meret.SelectedItem == "2 x 2")
             {
                 int meret = 2;
@@ -38,21 +42,50 @@ namespace parkereso
                     parkeresoGrid.ColumnDefinitions.Add(new ColumnDefinition());
                 }
                 List<string> szamok = new List<string>();
-                for (int i = 0; i < meret * meret / 2; i++)
+                if (lbox_tema.SelectedItem == "számok")
                 {
-                    szamok.Add(i.ToString());
-                    szamok.Add(i.ToString());
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(i.ToString());
+                        szamok.Add(i.ToString());
+                    }
                 }
+                else if (lbox_tema.SelectedItem == "emoji")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(emoji[i]);
+                        szamok.Add(emoji[i]);
+                    }
+                }
+                else if (lbox_tema.SelectedItem == "nevek")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(nevek[i]);
+                        szamok.Add(nevek[i]);
+                    }
+                }
+                else if (lbox_tema.SelectedItem == "szakáll")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(szakáll[i]);
+                        szamok.Add(szakáll[i]);
+                    }
+                }
+
                 szamok = szamok.Shuffle().ToList();
                 int index = 0;
                 for (int i = 0; i < meret; i++)
                 {
                     for (int j = 0; j < meret; j++)
                     {
-                        
+
                         Button btn = new Button
                         {
-                            Name = "btn_" + szamok[index++].ToString(),
+                            DataContext = szamok[index++].ToString(),
+                            Name = "btn_",
                             Content = "?",
                             FontSize = 20,
                             FontWeight = FontWeights.Bold,
@@ -77,11 +110,39 @@ namespace parkereso
                     parkeresoGrid.ColumnDefinitions.Add(new ColumnDefinition());
                 }
                 List<string> szamok = new List<string>();
-                for (int i = 0; i < meret * meret / 2; i++)
+                if (lbox_tema.SelectedItem == "számok")
                 {
-                    szamok.Add(i.ToString());
-                    szamok.Add(i.ToString());
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(i.ToString());
+                        szamok.Add(i.ToString());
+                    }
                 }
+                else if (lbox_tema.SelectedItem == "emoji")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(emoji[i]);
+                        szamok.Add(emoji[i]);
+                    }
+                }
+                else if (lbox_tema.SelectedItem == "nevek")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(nevek[i]);
+                        szamok.Add(nevek[i]);
+                    }
+                }
+                else if (lbox_tema.SelectedItem == "szakáll")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(szakáll[i]);
+                        szamok.Add(szakáll[i]);
+                    }
+                }
+
                 szamok = szamok.Shuffle().ToList();
                 int index = 0;
                 for (int i = 0; i < meret; i++)
@@ -91,7 +152,8 @@ namespace parkereso
 
                         Button btn = new Button
                         {
-                            Name = "btn_" + szamok[index++].ToString(),
+                            DataContext = szamok[index++].ToString(),
+                            Name = "btn_",
                             Content = "?",
                             FontSize = 20,
                             FontWeight = FontWeights.Bold,
@@ -116,11 +178,39 @@ namespace parkereso
                     parkeresoGrid.ColumnDefinitions.Add(new ColumnDefinition());
                 }
                 List<string> szamok = new List<string>();
-                for (int i = 0; i < meret * meret / 2; i++)
+                if (lbox_tema.SelectedItem == "számok")
                 {
-                    szamok.Add(i.ToString());
-                    szamok.Add(i.ToString());
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(i.ToString());
+                        szamok.Add(i.ToString());
+                    }
                 }
+                else if (lbox_tema.SelectedItem == "emoji")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(emoji[i]);
+                        szamok.Add(emoji[i]);
+                    }
+                }
+                else if (lbox_tema.SelectedItem == "nevek")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(nevek[i]);
+                        szamok.Add(nevek[i]);
+                    }
+                }
+                else if (lbox_tema.SelectedItem == "szakáll")
+                {
+                    for (int i = 0; i < meret * meret / 2; i++)
+                    {
+                        szamok.Add(szakáll[i]);
+                        szamok.Add(szakáll[i]);
+                    }
+                }
+
                 szamok = szamok.Shuffle().ToList();
                 int index = 0;
                 for (int i = 0; i < meret; i++)
@@ -130,7 +220,8 @@ namespace parkereso
 
                         Button btn = new Button
                         {
-                            Name = "btn_" + szamok[index++].ToString(),
+                            DataContext=szamok[index++].ToString(),
+                            Name = "btn_" ,
                             Content = "?",
                             FontSize = 20,
                             FontWeight = FontWeights.Bold,
@@ -157,7 +248,7 @@ namespace parkereso
             Button btn = sender as Button;
             if (btn != null)
             {
-                btn.Content = btn.Name.Split('_')[1];
+                btn.Content = btn.DataContext;
                 btn.Background = Brushes.Coral;
             }
             string felirat = btn.Content.ToString();
